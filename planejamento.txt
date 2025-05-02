@@ -1,0 +1,26 @@
+- Homepage
+- Fazer login e criar conta (usuario e autenticação)
+    - email
+    - username
+    - senha
+    - filmes ja vistos
+    - editar perfil
+
+- filmes/series
+    - thumb
+    - titulo
+    - descrição
+    - categoria
+    - quantdade de views
+    - data de criação
+    - episodios
+        - videos
+        - titulo
+
+- Barra de pesquisa
+
+Passos para criar o projeto:
+    - pip install django
+    - django-admin startproject <nome-do-projeto> espaço .
+    - rodar o server python manage.py runserver
+    - criar o superuser python manage.py createsuperuser
