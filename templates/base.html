@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        {% block titulo %}
-            
+        {% block titulo %}  
         {% endblock %}
     </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://cdn.tailwindcss.com"></script>
+    {% block head %}
+    {% endblock %}
 </head>
-<body>
+<body class="bg-black text-gray-100 font-primary">
+    {% include 'navbar.html '%}
     {% block content %}
-        
     {% endblock %}
     
 </body>
