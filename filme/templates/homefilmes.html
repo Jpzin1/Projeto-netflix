@@ -8,9 +8,9 @@ HomeFilmes Netflix
 {% block content %}
 <div class="py-10">
     <h1>Essa é a nossa HomeFilmes</h1>
-    {% for filme in lista_filmes %}
-    <hr>
-    <p>{{ filme }}</p>
+    {% for filme in object_list %}
+    <hr style="border: 1px solid #ccc; margin: 10px 0;">
+    <a href="{% url 'filme:detalhesfilme' filme.pk %}"><p>{{ filme.titulo }}</p></a>
     <p>{{ filme.descricao }}</p>
     <img src="{{ filme.thumb.url }}" alt="Imagem do filme">
     {% endfor %}

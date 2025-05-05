@@ -4,9 +4,20 @@ from django.utils import timezone
 # Create your models here.
 
 LISTA_CATEGORIAS = (
-    ("ANALISES", "Análises"),
-    ("PROGRAMACAO", "Programação"),
-    ("APRESENTACAO", "Apresentação"),
+    ("ACAO", "Ação"),
+    ("AVENTURA", "Aventura"),
+    ("COMEDIA", "Comédia"),
+    ("DRAMA", "Drama"),
+    ("FICCAO", "Ficção Científica"),
+    ("TERROR", "Terror"),
+    ("ROMANCE", "Romance"),
+    ("FANTASIA", "Fantasia"),
+    ("SUSPENSE", "Suspense"),
+    ("MISTERIO", "Mistério"),
+    ("GUERRA", "Guerra"),
+    ("FAROESTE", "Faroeste"),
+    ("MUSICAL", "Musical"),
+    ("ANIMACAO", "Animação"),
     ("OUTROS", "Outros"),
 )
 
