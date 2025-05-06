@@ -14,7 +14,7 @@
     - quantdade de views
     - data de criação
     - episodios
-        - videos
+        - videos (link do video)
         - titulo
 
 - Barra de pesquisa
@@ -24,3 +24,5 @@ Passos para criar o projeto:
     - django-admin startproject <nome-do-projeto> espaço .
     - rodar o server python manage.py runserver
     - criar o superuser python manage.py createsuperuser
+    - para rodar uma migracão python manage.py makemigrations
+    - python manage.py migrate
