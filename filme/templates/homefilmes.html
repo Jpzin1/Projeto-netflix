@@ -15,4 +15,14 @@ HomeFilmes Netflix
     <img src="{{ filme.thumb.url }}" alt="Imagem do filme">
     {% endfor %}
 </div>
+
+<div class="py-10">
+    <h2>Novo</h2>
+    {{ lista_filmes_recentes }}
+</div>
+
+<div class="py-10">
+    <h2>Em Alta</h2>
+    {{ lista_filmes_em_alta }}
+</div>
 {% endblock %}
