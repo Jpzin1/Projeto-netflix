@@ -7,7 +7,7 @@ HomeFilmes Hashflix
 
 {% block head %}
 <style>
-  $itemGrow: 1.2;
+$itemGrow: 1.2;
 $duration: 250ms;
 
 html {
@@ -30,6 +30,7 @@ display: grid;
 grid-template-columns: repeat(3,100%);
 overflow:hidden;
 scroll-behavior: smooth;
+
 
 section {
   width: 100%;
@@ -83,16 +84,16 @@ a.arrow__btn {
 {% block content %}
 
     <main class='bg-primary_black min-h-screen w-full'>
-        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex items-end bg-cover bg-center" style="background-image: url('{% static 'images/rato.jpg' %}');">
+        <section class="h-screen relative bg-no-repeat pb-8 pl-6 flex items-end bg-cover bg-center" style="background-image: url('{{ filme_destaque.thumb.url }}');">
             <div>
                 <h2 class="text-6xl font-semibold text-white my-4">
-                Titulo
+                {{ filme_destaque.titulo }}
                 </h2>
                 <p class=" w-11/12 md:w-5/12 font-medium text-white my-4">
-                    Descrição
+                    {{ filme_destaque.descricao }}
                 </p>
                 <div class="flex my-4">
-                    <a href="#">
+                    <a href="{% url 'filme:detalhesfilme' filme_destaque.pk %}">
                         <button class="flex items-center bg-white py-2 px-5 rounded-md" style='color:black;'>
                             <ion-icon name="play" class="text-2xl"></ion-icon>
                             <span class="ml-3 font-medium " >
@@ -112,7 +113,7 @@ a.arrow__btn {
                 </h2>
                 <div class="wrapper">
                   <section id="section1" class="flex flex-nowrap items-center justify-center space-x-8">
-                    <a href="#section2" class="arrow__btn text-6xl page mx-"> ‹ </a>
+                    <a href="#section2" class="arrow__btn text-6xl page mx-4"> ‹ </a>
                       {% for filme in lista_filmes_recentes %}
                       {% if forloop.counter < 5 %}
                       <div class="item h-64 w-1/4 m-4">
@@ -140,8 +141,6 @@ a.arrow__btn {
                       </section>
                     {% endif %}
                 </div>
-
-
             </div>
         </section>
 
@@ -153,7 +152,7 @@ a.arrow__btn {
                 <div class="wrapper">
                   <section id="section1emalta" class="flex flex-nowrap items-center justify-center space-x-8">
                     <a href="#section2emalta" class="arrow__btn text-6xl page">‹</a>
-                      {% for filme in lista_filmes_emalta %}
+                      {% for filme in lista_filmes_em_alta %}
                       {% if forloop.counter < 5 %}
                       <div class="item h-64 w-1/4 m-4">
                           <a href="{% url 'filme:detalhesfilme' filme.pk %}">
@@ -164,11 +163,11 @@ a.arrow__btn {
                       {% endfor %}
                         <a href="#section2emalta" class="arrow__btn text-6xl">›</a>
                   </section>
-                    {% if lista_filmes_emalta|length > 4 %}
+                    {% if lista_filmes_em_alta|length > 4 %}
                       <section id="section2emalta" class="flex flex-nowrap items-center justify-center">
                         <a href="#section1emalta" class="arrow__btn text-6xl">‹</a>
-                          {% for filme in lista_filmes_emalta %}
-                          {% if forloop.counter > 4 %}
+                          {% for filme in lista_filmes_em_alta %}
+                            {% if forloop.counter > 4 %}
                           <div class="item h-64 w-1/4 m-4">
                               <a href="{% url 'filme:detalhesfilme' filme.pk %}">
                                 <img src="{{ filme.thumb.url }}" class="rounded-md w-full h-full object-cover">
@@ -180,12 +179,8 @@ a.arrow__btn {
                       </section>
                     {% endif %}
                 </div>
-
-
             </div>
-        </section>
-        
-        
+        </section>        
     </main>
 
 {% endblock %}
